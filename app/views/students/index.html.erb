@@ -1,0 +1,26 @@
+<br/>
+<h1>Students</h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Student id</th>
+      <th scope="col">Faculty</th>
+      <th scope="col">Field of study</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+<div id="timetables">
+   <% @students.each do |student| %>
+    <tbody>
+      <%= render student %>
+      <td><%= link_to "Show", student, class:"btn btn-outline-secondary"%></td>
+    </tbody>
+   <% end %>
+</div>
+
+</table>
+
+<%= link_to "New student", new_student_path, class:"btn btn-outline-primary" %>

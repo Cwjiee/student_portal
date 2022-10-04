@@ -1,0 +1,14 @@
+<% if @user.errors.any? %>
+
+    <div id="error_explanation">
+        <div class="alert alert-danger">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            The form contains <%= pluralize(@user.errors.count, "error") %>.
+        </div>
+        <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

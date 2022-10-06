@@ -8,26 +8,43 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-            <%= link_to 'About us', about_path, class:"nav-link active" %>
-        </li>
+      <% if logged_in? %>
 
-        <li class="nav-item">
-            <%= link_to 'Students', students_path, class:"nav-link active" %>
-        </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-            <%= link_to 'Add students', new_student_path, class:"nav-link active" %>
-        </li>
-      </ul>
+          <li class="nav-item">
+              <%= link_to 'Profile', current_user, class:"nav-link active" %>
+          </li>
 
-      <ul class="navbar-nav flex-row-reverse">
-        <li class="nav-item">
-          <%= link_to 'Signup', signup_path , class:"nav-link active" %>
-        </li>
-      </ul>
+          <li class="nav-item">
+              <%= link_to 'About us', about_path, class:"nav-link active" %>
+          </li>
+
+          <li class="nav-item">
+              <%= link_to 'Students', students_path, class:"nav-link active" %>
+          </li>
+
+          <li class="nav-item">
+              <%= link_to 'Add students', new_student_path, class:"nav-link active" %>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav flex-row-reverse">
+          <li class="nav-item">
+            <%= link_to "Log out", logout_path ,  data: {"turbo-method": :delete } , class:"nav-link active" %>
+          </li>
+        </ul>
+
+      <% else %>
+
+        <ul class="navbar-nav flex-row-reverse">
+          <li class="nav-item">
+            <%= link_to 'Log in', login_path , class:"nav-link active" %>
+          </li>
+        </ul>
+
+      <% end %>
 
     </div>
 

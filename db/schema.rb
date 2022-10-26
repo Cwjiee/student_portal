@@ -29,5 +29,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_07_153530) do
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
-
 end

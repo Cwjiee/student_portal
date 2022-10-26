@@ -1,8 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div class="container-fluid ">
 
-    <%= link_to 'Portal', root_path, class:"navbar-brand" %>
-
+  <a class="text-white fs-5" style="margin-right: 10px" data-bs-toggle="offcanvas" href="#sidebar" role="button" aria-controls="offcanvasExample">
+    <i class="bi bi-list"></i>
+  </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,11 +15,11 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <%= link_to 'Students', students_path, class:"nav-link active" %>
+            <%= link_to 'Students', students_path(current_user), class:"nav-link active" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to 'Add students', new_student_path, class:"nav-link active" %>
+            <%= link_to 'Add students', new_student_path(current_user), class:"nav-link active" %>
           </li>
 
           <% if current_user.admin? %>
@@ -30,15 +31,12 @@
           <% end %>
         </ul>
 
-        <ul class="navbar-nav flex-row-reverse">
-
-          <li class="nav-item dropstart">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-              </svg>
+        <ul class="nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><%= link_to 'Profile', current_user, class:"dropdown-item" %></li>
               <li><%= link_to 'About us', about_path(current_user), class:"dropdown-item" %></li>
               <li><%= link_to 'Settings', edit_user_path(current_user), class:"dropdown-item" %></li>

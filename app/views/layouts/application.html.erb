@@ -14,11 +14,14 @@
   <body>
     <%= render 'home/header' %>
 
+    <% if logged_in? %>
+      <%= render 'shared/dashboard' %>
+    <% end %>
+
     <div class='container'>
       <br/>
-      <% if notice %>
-        <%= render 'layouts/alerts' %>
-      <% end %>
+
+      <%= render 'layouts/alerts' %>
 
       <%= yield %>
     </div>

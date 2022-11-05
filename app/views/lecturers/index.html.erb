@@ -1,0 +1,26 @@
+<% provide(:title, "lecturer") %>
+<br/>
+<h1>Lecturers</h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Course id</th>
+      <th scope="col">Email</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+<div id="timetables">
+   <% @lecturers.each do |lecturer| %>
+    <tbody>
+      <%= render lecturer %>
+      <td><%= link_to "Show", lecturer, class:"btn btn-outline-secondary"%></td>
+    </tbody>
+   <% end %>
+</div>
+
+</table>
+
+<%= link_to "New lecturer", new_lecturer_path, class:"btn btn-outline-primary" %>

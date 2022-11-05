@@ -11,4 +11,12 @@ User.create!(name: "Chong Wei Jie",
              email: "1211207326@student.mmu.edu.my",
              password: "Cwj0930#",
              password_confirmation: "Cwj0930#",
-             admin: true)
+             admin: true,
+             lecturer: true)
+
+User.create!(name: "Danny",
+             email: "danny@email.com",
+             password: "dannyjing",
+             password_confirmation: "dannyjing",
+             admin: false,
+             lecturer: true)

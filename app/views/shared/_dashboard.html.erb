@@ -33,10 +33,10 @@
               <div class="collapse" id="students">
                 <ul class="navbar-nav ps-3">
                   <li>
-                    <%= link_to 'Show all', students_path, class:"nav-link active" %>
+                    <%= link_to 'Show all', students_path, class:"nav-link" %>
                   </li>
                   <li>
-                    <%= link_to 'Add students', new_student_path, class:"nav-link active" %>
+                    <%= link_to 'Add students', new_student_path, class:"nav-link" %>
                   </li>
                 </ul>
               </div>
@@ -54,10 +54,10 @@
               <div class="collapse" id="lecturers">
                 <ul class="navbar-nav ps-3">
                   <li>
-                    Show all
+                    <%= link_to 'Show all', lecturers_path, class:"nav-link" %>
                   </li>
                   <li>
-                    Add lecturers
+                    <%= link_to 'Add lecturer', new_lecturer_path, class:"nav-link" %>
                   </li>
                 </ul>
               </div>

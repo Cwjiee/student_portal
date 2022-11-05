@@ -25,5 +25,6 @@ class User < ApplicationRecord
     def session_token
         remember_digest || remember
     end
+
 end
 

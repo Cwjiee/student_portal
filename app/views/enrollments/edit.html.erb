@@ -1,0 +1,10 @@
+<h1>Editing enrollment</h1>
+
+<%= render "form", enrollment: @enrollment %>
+
+<br>
+
+<div>
+  <%= link_to "Show this enrollment", [@student, @enrollment] %> |
+  <%= link_to "Back to enrollments", student_enrollments_path(@student) %>
+</div>

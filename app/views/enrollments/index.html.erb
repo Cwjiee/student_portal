@@ -1,0 +1,12 @@
+<h1>Enrollments</h1>
+
+<div id="enrollments">
+  <% @enrollments.each do |enrollment| %>
+    <%= render enrollment %>
+    <p>
+      <%= link_to "Show this enrollment", student_enrollments_path(@student) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New enrollment", new_student_enrollment_path(@student) %>

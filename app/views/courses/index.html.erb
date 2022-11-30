@@ -1,0 +1,21 @@
+<h1>Courses</h1>
+
+<table class="table table-bordered table-hover w-50">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <div id="courses">
+    <% @courses.each do |course| %>
+      <tbody>
+        <td><%= course.name %></td>
+        <td><%= link_to "Show this course", course, class:"btn btn-outline-secondary" %></td>
+      </tbody>
+    <% end %>
+  </div>
+</table>
+
+<%= link_to "New course", new_course_path, class:"btn btn-outline-primary" %>

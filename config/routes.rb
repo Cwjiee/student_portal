@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  
+  resources :courses
   resources :lecturers
-
   resources :users
-  resources :students
+  resources :students do
+    resources :enrollments
+  end 
   
   root 'home#index'
   get '/about', to: 'home#about'

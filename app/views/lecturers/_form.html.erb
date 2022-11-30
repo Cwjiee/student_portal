@@ -12,15 +12,17 @@
   <% end %>
 
   <div>
-    <%= form.text_field :name, class:"form-control", placeholder:"Name"  %>
+    <%= form.text_field :name, class:"form-control w-50", placeholder:"Name"  %>
   </div>
   <br/>
   <div>
-    <%= form.text_field :course_id, class:"form-control", placeholder:"Course Id"  %>
+    Course
+    <br>
+    <%= form.collection_select :course_id, Course.all, :id, :name, class:"form-control" %>
   </div>
   <br/>
   <div>
-    <%= form.email_field :email, class:"form-control", placeholder:"Email"  %>
+    <%= form.email_field :email, class:"form-control w-50", placeholder:"Email"  %>
   </div>
   <br/>
   <div class="btn-group me-2" role="group" aria-label="Second group">

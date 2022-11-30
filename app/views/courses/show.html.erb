@@ -1,0 +1,16 @@
+<h2>Enrolled Students</h2>
+
+<ol class="list-group list-group-numbered w-50">
+  <% @course.students.each do |student| %>
+    <li class="list-group-item" ><%= student.name %></li>
+  <% end %>
+</ol> 
+<br>
+
+<div>
+  <div class="btn-group me-2" role="group" aria-label="Basic outlined example">
+    <%= link_to "Edit this course", edit_course_path(@course), class:"btn btn-outline-secondary" %> 
+    <%= link_to "Back to courses", courses_path, class:"btn btn-outline-secondary" %>
+  </div>
+    <%= button_to "Destroy this course", @course, method: :delete, class:"btn btn-outline-danger" %>
+</div>

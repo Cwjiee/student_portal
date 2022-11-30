@@ -12,9 +12,17 @@
   </tbody>
 </table>
 
+<ul class="list-group w-25">
+  <% for enrollment in @student.enrollments %>
+    <li class="list-group-item"><%= enrollment.course.name %></li>
+<% end %>
+</ul>
+<br>
+
 <div>
   <div class="btn-group me-2" role="group" aria-label="Second group">
     <%= link_to "Edit this student", edit_student_path(@student), class:"btn btn-outline-secondary" %> 
+    <%= link_to "Enroll courses", new_student_enrollment_path(@student), class:"btn btn-outline-secondary" %>
     <%= link_to "Back to students", students_path, class:"btn btn-outline-secondary" %>
   </div>
 

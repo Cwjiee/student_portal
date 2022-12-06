@@ -11,7 +11,7 @@
             <% unless current_user?(user) && user.admin? %>
                 <div class="btn-group me-2" role="group" aria-label="Second group">
                 <!--    <%= link_to "View", edit_student_path(user), class:"btn btn-outline-primary" %> -->
-                    <%= link_to "Delete", user, method: :delete, class:"btn btn-outline-danger" %>
+                    <%= button_to "Delete", user, method: :delete, class:"btn btn-outline-danger" %>
                 </div> 
             <% end %>
         </li>

@@ -1,0 +1,16 @@
+<%= render @assignment %>
+<br>  
+<div class="hstack gap-2"> 
+  <div class="btn-group me-2" role="group" aria-label="Second group">
+    <%= link_to "Edit this assignment", edit_assignment_path(@assignment), class:"btn btn-outline-secondary" %>
+    <%= link_to "Back to assignments", assignments_path, class:"btn btn-outline-secondary" %>
+  </div>
+
+  <div class="ms-auto">
+    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Delete
+    </button>
+  </div>
+
+  <%= render "shared/modal" %>
+</div>

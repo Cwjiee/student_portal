@@ -2,10 +2,9 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <%= form.text_field :name, class:"form-control w-25" %>
+  </div><br>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <div class="btn-group me-2" role="group" aria-label="Second group">
+    <%= form.submit class:"btn btn-outline-primary" %>
 <% end %>

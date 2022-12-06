@@ -230,6 +230,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     solargraph (0.47.2)
       backport (~> 1.2)
       benchmark
@@ -303,6 +305,7 @@ DEPENDENCIES
   rails-controller-testing
   sassc-rails
   selenium-webdriver
+  simple_calendar (~> 2.4.3)
   solargraph
   sprockets-rails
   sqlite3 (>= 1.5.1)

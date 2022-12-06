@@ -14,8 +14,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <% if logged_in? %>
-
-        <ul class="nav ms-auto mb-2 mb-lg-0">
+        <% if is_admin? %>
+          <span style="color: white;", class="ms-auto">(Admin)</span>
+        <% end %>
+        <ul class="nav mb-2 mb-lg-0">
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="bi bi-person"></i>

@@ -1,13 +1,13 @@
 <%= form_with(model: [@student, enrollment]) do |form| %>
 
   <div>
-    <%= form.label "Student Id", style: "display: block" %>
-    <%= form.text_field :student_id, class:"form-control w-25" %>
+    <%= form.label "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, {:include_blank => true}, {class: "form-select w-25"} %>
   </div><br>
 
   <div>
     <%= form.label :course, style: "display: block" %>
-    <%= form.collection_select :course_id, Course.all, :id, :name, class:"form-select" %>
+    <%= form.collection_select :course_id, Course.all, :id, :name, {:include_blank => true}, {class: "form-select w-25"} %>
   </div><br>
 
   <div class="btn-group me-2" role="group" aria-label="Second group">

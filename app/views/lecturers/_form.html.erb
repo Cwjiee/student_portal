@@ -16,13 +16,17 @@
   </div>
   <br/>
   <div>
-    Course
-    <br>
-    <%= form.collection_select :course_id, Course.all, :id, :name, class:"form-control" %>
+    <%= form.email_field :email, class:"form-control w-50", placeholder:"Email"  %>
   </div>
   <br/>
   <div>
-    <%= form.email_field :email, class:"form-control w-50", placeholder:"Email"  %>
+    <h5>Course</h5>
+    <%= form.collection_check_boxes :course_id, Course.all, :id, :name do |b| %>
+      <span class="form-check">
+        <%= b.check_box class:"form-check-input" %>
+        <%= b.label class:"form-check-label" %>
+      </span>
+    <% end %>
   </div>
   <br/>
   <div class="btn-group me-2" role="group" aria-label="Second group">

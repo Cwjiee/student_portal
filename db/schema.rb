@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_27_090643) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_190229) do
+  create_table "assignments", force: :cascade do |t|
+    t.string "course_id"
+    t.string "title"
+    t.text "description"
+    t.integer "marks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -49,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_090643) do
     t.string "password_digest"
     t.boolean "admin", default: false
     t.boolean "lecturer", default: false
+    t.boolean "student", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

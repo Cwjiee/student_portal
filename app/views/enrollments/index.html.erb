@@ -1,12 +1,21 @@
 <h1>Enrollments</h1>
+<br>
+
+<h5><%= @student.name %></h5>
+<table class="table table-bordered table-hover w-50">
+  <thead class="table-dark">
+    <th scope="col">Course</th>
+    <th colspan="1"></th>
+  </thead>
+  
 
 <div id="enrollments">
   <% @enrollments.each do |enrollment| %>
     <%= render enrollment %>
-    <p>
-      <%= link_to "Show this enrollment", student_enrollments_path(@student) %>
-    </p>
+      <td><%= link_to "Show enrollment", student_enrollments_path(@student), class:"btn btn-outline-secondary" %></td>
+      </tbody>
   <% end %>
 </div>
+</table>
 
-<%= link_to "New enrollment", new_student_enrollment_path(@student) %>
+<%= link_to "New enrollment", new_student_enrollment_path(@student), class:"btn btn-outline-primary" %>

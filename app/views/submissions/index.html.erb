@@ -1,0 +1,23 @@
+<h1>Submissions</h1>
+
+<div id="submissions" class="container overflow-hidden">
+  <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+    <% @submissions.each do |submission| %>
+      <a href="<%= course_assignment_submission_path(@course, @assignment, submission) %>" class="col-6">
+        <div class="Course border col p-3 rounded">
+          <div class="title text-center"><small><%= submission.student.name %></small></div>
+          <hr class="opacity-50">
+          <p class="text-center"><small><%= submission.grade %>
+            <% if !submission_graded?(submission) %>
+              (Ungraded)
+            <% end %></small></p>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="btn-group me-2" role="group" aria-label="Second group">
+  <%= link_to "New submission", new_course_assignment_submission_path(@course, @assignment), class:"btn btn-primary" %>
+  <%= link_to "Back to assignment", course_assignment_path(@course, @assignment), class:"btn btn-secondary" %>
+</div>

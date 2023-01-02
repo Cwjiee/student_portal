@@ -6,6 +6,22 @@
   <% end %>
 </ol> 
 <br>
+<h2>Enrolled Assignments</h2>
+<div id="course-card" class="container overflow-hidden">
+  <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+    <% @course.assignments.each do |assignment| %>
+      <div class="col-6">
+        <div class="Course border col p-3 rounded">
+          <div class="title text-center"><small><%= assignment.course.name %></small></div>
+          <hr class="opacity-50">
+          <p class="text-center"><small><%= assignment.title %></small></p>
+          <small><%= assignment.marks %> marks</small>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
 
 <div>
   <div class="btn-group me-2" role="group" aria-label="Basic outlined example">

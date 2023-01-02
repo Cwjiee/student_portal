@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :assignments
-  resources :courses
   resources :lecturers
   resources :users
   resources :students do
     resources :enrollments
   end 
+  resources :courses do
+    resources :assignments do
+      resources :submissions
+    end
+  end
   
   root 'home#index'
   get '/about', to: 'home#about'
@@ -15,5 +18,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   
-
+  get '/main', to: 'assignments#main'
 end

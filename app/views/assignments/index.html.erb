@@ -6,7 +6,7 @@
       <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
         <% @assignments.each do |assignment| %>
           <!-- Modal -->
-          <a href="<%= assignment_path(assignment) %>" class="col-6">
+          <a href="<%= course_assignment_path(@course, assignment) %>" class="col-6">
             <div class="Course border col p-3 rounded">
               <div class="title text-center"><small><%= assignment.course.name %></small></div>
               <hr class="opacity-50">
@@ -21,4 +21,5 @@
 </div>
 <br>
 
-<%= link_to "New assignment", new_assignment_path, class:"btn btn-outline-primary" %>
+<%= link_to "New assignment", new_course_assignment_path(@course), class:"btn btn-outline-primary" %>
+<%= link_to "Back", main_path, class:"btn btn-outline-primary" %>

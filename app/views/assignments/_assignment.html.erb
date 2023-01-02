@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div class="card text-center w-50 mx-auto">
   <div class="card-header">
     <%= assignment.course.name %>
   </div>
@@ -8,6 +8,6 @@
     
   </div>
   <div class="card-footer text-muted">
-    <%= assignment.created_at %>
+    <%= date_format(assignment.created_at) %>
   </div>
 </div>

@@ -1,0 +1,36 @@
+<%= form_with(model: [@course, @assignment, submission]) do |form| %>
+  <% if submission.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+        <% submission.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, @course.students, :id, :name, {:include_blank => true}, {class: "form-select w-25"} %>
+  </div><br>
+
+  <div>
+    <%= form.label "Assignment", style: "display: block" %>
+    <%= form.collection_select :assignment_id, @assignments, :id, :title, {:include_blank => true}, {class: "form-select w-25"} %>
+  </div><br>
+
+  <div>
+    <%= form.label "Grade", style: "display: block" %>
+    <%= form.number_field :grade, class:"form-control w-25" %>
+  </div><br>
+
+  <div>
+    <%= form.label "Submission", style: "display: block" %>
+    <%= form.text_area :submission, {class: "form-control w-25"} %>
+  </div><br>
+
+  <div class="hstack gap-2 mx-auto">
+    <%= form.submit class: "btn btn-primary" %>
+<% end %>

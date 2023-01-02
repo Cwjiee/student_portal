@@ -1,9 +1,18 @@
 <%= render @assignment %>
 <br>  
+
+<h2>Assigned Students</h2>
+<ol class="list-group list-group-numbered w-50">
+<% @students.each do |student| %>
+  <li class="list-group-item w-50" ><%= student.name %></li>
+<% end %>
+</ol>
+<br>
+
 <div class="hstack gap-2"> 
-  <div class="btn-group me-2" role="group" aria-label="Second group">
-    <%= link_to "Edit this assignment", edit_assignment_path(@assignment), class:"btn btn-outline-secondary" %>
-    <%= link_to "Back to assignments", assignments_path, class:"btn btn-outline-secondary" %>
+  <div class="btn-group me-auto" role="group" aria-label="Second group">
+    <%= link_to "Edit assignment", edit_course_assignment_path(@course, @assignment), class:"btn btn-outline-secondary" %>
+    <%= link_to "Back to assignments", course_assignments_path(@course), class:"btn btn-outline-secondary" %>
   </div>
 
   <div class="ms-auto">
@@ -11,6 +20,7 @@
       Delete
     </button>
   </div>
-
-  <%= render "shared/modal" %>
 </div>
+
+<%= link_to "check submissions", course_assignment_submissions_path(@course, @assignment),style: "margin-top: 5px" , class:"btn btn-outline-primary" %>
+<%= render "shared/modal" %>

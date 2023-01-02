@@ -1,0 +1,14 @@
+<div id="<%= dom_id submission %>">
+  <div class="card text-center w-50 mx-auto">
+  <div class="card-header">
+    <%= submission.student.name %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= submission.assignment.title %></h5>
+    <p class="card-text"><%= submission.grade %>
+    <% if !submission_graded?(submission) %>
+      (Ungraded)
+    <% end %></p>
+  </div>
+</div>
+

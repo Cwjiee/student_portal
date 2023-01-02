@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <h1>Courses</h1>
+
+    <div id="courses" class="container overflow-hidden">
+      <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+        <% @courses.each do |course| %>
+          <!-- Modal -->
+          <a href="<%= course_assignments_path(course) %>" class="col-6">
+            <div class="Course border col p-3 rounded">
+              <div class="title text-center"><small><%= course.name %></small></div>
+              <hr class="opacity-50">
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</div>
+<br>
+

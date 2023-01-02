@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @submission %>
+<br>
+<div class="hstack gap-2 mx-auto">
+  <div class="btn-group me-auto" role="group" aria-label="Second group">
+    <%= link_to "Edit submission", edit_course_assignment_submission_path(@course, @assignment, @submission), class:"btn btn-outline-primary" %>
+    <%= link_to "Back to submissions", course_assignment_submissions_path(@course, @assignment), class:"btn btn-outline-secondary" %>
+  </div>
+
+  <%= button_to "Delete submission", [@course, @assignment, @submission], method: :delete, class:"btn btn-outline-danger" %>
+</div>

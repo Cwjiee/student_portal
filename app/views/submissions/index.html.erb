@@ -17,7 +17,6 @@
   </div>
 </div>
 <br>
-<div class="btn-group me-2" role="group" aria-label="Second group">
-  <%= link_to "New submission", new_course_assignment_submission_path(@course, @assignment), class:"btn btn-primary" %>
-  <%= link_to "Back to assignment", course_assignment_path(@course, @assignment), class:"btn btn-secondary" %>
-</div>
+
+<%= link_to "New submission", new_course_assignment_submission_path(@course, @assignment), class:"btn btn-primary" %>
+<%= link_to "Back to assignment", course_assignment_path(@course, @assignment), class:"btn btn-outline-secondary" %>
